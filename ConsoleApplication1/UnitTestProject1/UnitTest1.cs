@@ -26,6 +26,18 @@ namespace UnitTestProject1
             bool result4 = Program.IsEven(4);
             Assert.AreEqual(true, result4);
         }
-        
+
+        [TestMethod]
+        public void TestIsPrime()
+        {
+            bool result1 = Program.IsEven(3);
+            Assert.AreEqual(false, result1);
+
+            bool result2 = Program.IsEven(4);
+            Assert.AreEqual(true, result2);
+
+            bool result3 = Program.IsEven(3);
+            Assert.AreEqual(false, result3);
+        }
     }
 }

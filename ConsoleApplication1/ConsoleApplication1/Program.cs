@@ -30,5 +30,35 @@ namespace ConsoleApplication1
             }
             return false;
         }
+
+        public static Boolean IsPrime(int n)
+        {
+            int c = 0;
+            if (n >= 2)
+            {
+                for (int i = 1; i <= n; i++)
+                {
+                    if (n % i == 0)
+                    {
+                        c++;
+                    }
+                }
+            }
+            if (c==2)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static int Square(int n)
+        {
+            return n*n;
+        }
+
+        public static int Cube(int n)
+        {
+            return n*n*n;
+        }
     }
 }
