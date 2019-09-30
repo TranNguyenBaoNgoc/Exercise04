@@ -10,15 +10,18 @@ namespace ConsoleApplication2
     {
         static void Main(string[] args)
         {
+            //2
             VLine(4, 'i');
-            Square(4, 'i');
-            SquareHollow(5,'*');
-            DrawU(5, '*');
-            DrawV(5, '*');
-            RevTriangle(5, '*');
-            Triangle(5, '*');
-            DrawA(4, '*');
-            DrawPlus(4, '*');
+            Square(4, 'o');
+            SquareHollow(4,'o');
+            DrawU(4, 'u');
+            DrawV(4, 'V');
+            RevTriangle(4, 'V');
+            Triangle(4, 'A');
+            DrawA(4, 'A');
+            DrawX(4, 'X');
+            DrawPlus(4, '+');
+
             //1
             int[] Arr = new int[10];
             EnterAray(Arr);
@@ -46,8 +49,6 @@ namespace ConsoleApplication2
             Console.WriteLine("Have {0} number 5 or 6 in the series", CountOr(Arr, 5, 6));
             Console.Write("Sum: ");
             Console.WriteLine(SumValues(Arr));
-
-            //2
         }
 
         //1
@@ -246,13 +247,18 @@ namespace ConsoleApplication2
             Console.WriteLine();
         }
 
+        static void DrawW(int n, char c)
+        {
+
+        }
+
         static void DrawA(int n, char c)
         {
             HLine(n + 1, ' ');
             HLine(1, c);
             Console.WriteLine();
             int a = 1, b = n;
-            for (int i = 1; i < n/2 +1; i++)
+            for (int i = 1; i < n/2 ; i++)
             {
                 HLine(b, ' ');
                 HLine(1, c);
@@ -278,6 +284,38 @@ namespace ConsoleApplication2
                 a += 2;
             }
         }
+
+        static void DrawX(int n, char c)
+        {
+
+            int a=0, b = 2 * n - 3;
+            for (int i = 0; i < n/2 ; i++)
+            {
+                HLine(a, ' ');
+                HLine(1, c);
+                HLine(b, ' ');
+                HLine(1, c);
+                Console.WriteLine();
+                a++;
+                b -= 2;
+            }
+            HLine(n - 1, ' ');
+            HLine(1, c);
+            Console.WriteLine();
+            b += 2;
+            a--;
+            for (int i = 0; i < n / 2; i++)
+            {
+                HLine(a, ' ');
+                HLine(1, c);
+                HLine(b, ' ');
+                HLine(1, c);
+                Console.WriteLine();
+                b += 2;
+                a--;
+            }
+        }
+
         static void DrawPlus(int n, char c)
         {
             for (int i = 0; i < n/2; i++)
