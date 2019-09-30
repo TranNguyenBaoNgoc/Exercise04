@@ -63,9 +63,10 @@ namespace UnitTestProject1
             Assert.AreEqual(27, result2);
         }
 
+        [TestMethod]
         public void TestPow()
         {
-            double result1 = Program.Pow(0,1);
+            double result1 = Program.Pow(0, 1);
             Assert.AreEqual(0, result1);
 
             double result2 = Program.Pow(0, -1);
@@ -78,7 +79,48 @@ namespace UnitTestProject1
             Assert.AreEqual(4, result4);
 
             double result5 = Program.Pow(2, -2);
-            Assert.AreEqual(1/4, result5);
+            Assert.AreEqual(1 / 4, result5);
+        }
+
+        [TestMethod]
+        public void TestAbs()
+        {
+            int result1 = Program.Abs(-3);
+            Assert.AreEqual(3, result1);
+
+            int result2 = Program.Abs(3);
+            Assert.AreEqual(3, result2);
+        }
+
+        [TestMethod]
+        public void TestCeil()
+        {
+            int result1 = Program.Ceil(2/3);
+            Assert.AreEqual(1, result1);
+
+            int result2 = Program.Ceil(1/3);
+            Assert.AreEqual(1, result2);
+        }
+
+        public void TestFloor()
+        {
+            int result1 = Program.Floor(2 / 3);
+            Assert.AreEqual(0, result1);
+
+            int result2 = Program.Floor(1 / 3);
+            Assert.AreEqual(0, result2);
+        }
+
+        public void TestFactorial()
+        {
+            int result1 = Program.Factorial(4);
+            Assert.AreEqual(24, result1);
+        }
+
+        public void TestEquation()
+        {
+            double result1 = Program.Equation(2,3);
+            Assert.AreEqual(Math.Sin(2), result1);
         }
     }
 }

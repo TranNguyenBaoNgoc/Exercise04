@@ -10,7 +10,7 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Pow(2,-2));
+            Console.WriteLine(Equation(2,3));
         }
 
         public static Boolean IsOdd(int n)
@@ -61,7 +61,7 @@ namespace ConsoleApplication1
             return n*n*n;
         }
 
-        public static double Pow(int x, int y)
+        public static double Pow(double x, double y)
         {
             double result = 1;
             if (x == 0)
@@ -79,10 +79,60 @@ namespace ConsoleApplication1
             {
                 for (int i = 1; i <= -y; i++)
                 {
-                    result *= (double) 1/x;
+                    result *= 1/x;
                 }
             }
             return result;
+        }
+
+        public static int Abs(int n)
+        {
+            if (n < 0)
+            {
+                n *= -1;
+            }
+            return n;
+        }
+        public static int Ceil(float n)
+        {
+            return (int)n + 1;
+        }
+
+        public static int Floor(float n)
+        {
+            return (int)n;
+        }
+
+        public static int Ran1()
+        {
+            Random r = new Random();
+            return r.Next(0, (int)Pow(2,31));
+        }
+
+        public static int Ran2()
+        {
+            Random r = new Random();
+            return r.Next(0,2);
+        }
+
+        public static int Factorial(int n)
+        {
+            int s = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                s *= i;
+            }
+            return s;
+        }
+
+        public static double Equation(double x, int n)
+        {
+            double s = 0;
+            for (int i = 0; i <= n; i++)
+            {
+                s += Pow(-1,i)*(Pow(x, 2*i+1)/Factorial(2*i+1));
+            }
+            return s;
         }
     }
 }
