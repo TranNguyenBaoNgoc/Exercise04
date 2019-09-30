@@ -12,7 +12,7 @@ namespace ConsoleApplication1
         {
             Console.WriteLine(Equation(2,3));
         }
-
+        //4a
         public static Boolean IsOdd(int n)
         {
             if (n % 2 == 0)
