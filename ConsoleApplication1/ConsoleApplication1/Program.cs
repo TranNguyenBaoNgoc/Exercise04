@@ -10,7 +10,7 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(IsOdd(4));
+            Console.WriteLine(Pow(2,-2));
         }
 
         public static Boolean IsOdd(int n)
@@ -59,6 +59,30 @@ namespace ConsoleApplication1
         public static int Cube(int n)
         {
             return n*n*n;
+        }
+
+        public static double Pow(int x, int y)
+        {
+            double result = 1;
+            if (x == 0)
+            {
+                result = 0;
+            }
+            else if (x != 0 && y > 0)
+            {
+                for (int i = 1; i <= y; i++)
+                {
+                    result *= x; 
+                }
+            }
+            else if (x != 0 && y < 0)
+            {
+                for (int i = 1; i <= -y; i++)
+                {
+                    result *= (double) 1/x;
+                }
+            }
+            return result;
         }
     }
 }
