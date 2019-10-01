@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication2
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -22,6 +22,7 @@ namespace ConsoleApplication2
             DrawA(4, 'A');
             DrawX(4, 'X');
             DrawPlus(4, '+');
+
             //1
             int[] Arr = new int[10];
             EnterAray(Arr);
@@ -57,7 +58,7 @@ namespace ConsoleApplication2
             for (int i = 0; i < Arr.Length; i++)
             {
                 Console.WriteLine("Nhap Phan Tu Arr[{0}]", i);
-                Arr[i] = Convert.ToInt32(Console.ReadLine());
+                Arr[i] = int.Parse(Console.ReadLine());
             }
         }
 
@@ -69,7 +70,7 @@ namespace ConsoleApplication2
             }
         }
 
-        static Boolean CheckContain(int[] Arr, int n)
+        public static Boolean CheckContain(int[] Arr, int n)
         {
             for (int i = 0; i < Arr.Length; i++)
             {
@@ -81,7 +82,7 @@ namespace ConsoleApplication2
             return false;
         }
 
-        static Boolean CheckContainOr(int[] Arr, int n1, int n2)
+        public static Boolean CheckContainOr(int[] Arr, int n1, int n2)
         {
             for (int i = 0; i < Arr.Length; i++)
             {
@@ -93,7 +94,7 @@ namespace ConsoleApplication2
             return false;
         }
 
-        static Boolean CheckContainAnd(int[] Arr, int n1, int n2)
+        public static Boolean CheckContainAnd(int[] Arr, int n1, int n2)
         {
             if (CheckContain(Arr,n1)==true && CheckContain(Arr,n2) == true)
             {
@@ -102,7 +103,7 @@ namespace ConsoleApplication2
             return false;
         }
 
-        static int Count(int[] Arr, int n)
+        public static int Count(int[] Arr, int n)
         {
             int s = 0;
             for (int i = 0; i < Arr.Length; i++)
@@ -115,7 +116,7 @@ namespace ConsoleApplication2
             return s;
         }
 
-        static int CountOr(int[] Arr, int n1, int n2)
+        public static int CountOr(int[] Arr, int n1, int n2)
         {
             int s = 0;
             for (int i = 0; i < Arr.Length; i++)
@@ -127,7 +128,7 @@ namespace ConsoleApplication2
             }
             return s;
         }
-        static int SumValues(int[] Arr)
+        public static int SumValues(int[] Arr)
         {
             int s = 0;
             foreach (int item in Arr)
@@ -255,19 +256,18 @@ namespace ConsoleApplication2
             HLine(n +1, ' ');
             HLine(1, c);
             Console.WriteLine();
-            int a = 1, b = n-1;
-            while (b != 1)
+            int b = n - 1;
+            for (int i = 1; i <= n; i++)
             {
-                HLine(a, ' ');
+                HLine(i, ' ');
                 HLine(1, c);
                 HLine(b, ' ');
                 HLine(1, c);
-                HLine(a+1, ' ');
+                HLine(i, ' ');
                 HLine(1, c);
                 HLine(b, ' ');
                 HLine(1, c);
                 Console.WriteLine();
-                a++;
                 b -= 2;
             }
             HLine(n - 1, ' ');
