@@ -18,10 +18,10 @@ namespace ConsoleApplication2
             DrawV(4, 'V');
             RevTriangle(4, 'V');
             Triangle(4, 'A');
+            DrawW(10, 'W');
             DrawA(4, 'A');
             DrawX(4, 'X');
             DrawPlus(4, '+');
-
             //1
             int[] Arr = new int[10];
             EnterAray(Arr);
@@ -249,7 +249,32 @@ namespace ConsoleApplication2
 
         static void DrawW(int n, char c)
         {
-
+            HLine(1, c);
+            HLine(n +1, ' ');
+            HLine(1, c);
+            HLine(n +1, ' ');
+            HLine(1, c);
+            Console.WriteLine();
+            int a = 1, b = n-1;
+            while (b != 1)
+            {
+                HLine(a, ' ');
+                HLine(1, c);
+                HLine(b, ' ');
+                HLine(1, c);
+                HLine(a+1, ' ');
+                HLine(1, c);
+                HLine(b, ' ');
+                HLine(1, c);
+                Console.WriteLine();
+                a++;
+                b -= 2;
+            }
+            HLine(n - 1, ' ');
+            HLine(1, c);
+            HLine(n +1, ' ');
+            HLine(1, c);
+            Console.WriteLine();
         }
 
         static void DrawA(int n, char c)

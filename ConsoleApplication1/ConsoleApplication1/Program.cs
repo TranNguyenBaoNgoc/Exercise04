@@ -95,22 +95,26 @@ namespace ConsoleApplication1
         }
         public static int Ceil(float n)
         {
-            if (n > 0)
-            {
-                return (int)n+1;
+            if (n != (int)n)
+            { 
+                if (n > 0)
+                {
+                    return (int)n+1;
+                }
             }
-            else
-                return (int)n;
+            return (int)n;
         }
 
         public static int Floor(float n)
         {
-            if (n>0)
+            if (n < 0)
             {
-                return (int)n;
+                if (n != (int)n)
+                {
+                    return (int)n-1;
+                }
             }
-            else
-            return (int)n-1;
+            return (int)n;
         }
 
         public static int Ran1()
