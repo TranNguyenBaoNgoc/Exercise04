@@ -10,7 +10,7 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Equation(2,3));
+            Console.WriteLine(Pow(0,1));
         }
         //4a
         public static Boolean IsOdd(int n)
@@ -95,12 +95,22 @@ namespace ConsoleApplication1
         }
         public static int Ceil(float n)
         {
-            return (int)n + 1;
+            if (n > 0)
+            {
+                return (int)n+1;
+            }
+            else
+                return (int)n;
         }
 
         public static int Floor(float n)
         {
-            return (int)n;
+            if (n>0)
+            {
+                return (int)n;
+            }
+            else
+            return (int)n-1;
         }
 
         public static int Ran1()
@@ -115,7 +125,7 @@ namespace ConsoleApplication1
             return r.Next(0,2);
         }
 
-        public static int Factorial(int n)
+        public static int Factorial(long n)
         {
             int s = 1;
             for (int i = 1; i <= n; i++)

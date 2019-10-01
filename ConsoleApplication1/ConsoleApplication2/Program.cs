@@ -288,27 +288,29 @@ namespace ConsoleApplication2
         static void DrawX(int n, char c)
         {
 
-            int a=0, b = 2 * n - 3;
-            for (int i = 0; i < n/2 ; i++)
+            int a = 0, b = 2 * n - 3;
+            while (b != 1)
             {
+                //HLine(1, ' ');
                 HLine(a, ' ');
                 HLine(1, c);
-                HLine(b, ' ');
+                HLine(b - 2, ' ');
                 HLine(1, c);
                 Console.WriteLine();
                 a++;
                 b -= 2;
             }
-            HLine(n - 1, ' ');
+            HLine(n - 2, ' ');
             HLine(1, c);
             Console.WriteLine();
             b += 2;
             a--;
-            for (int i = 0; i < n / 2; i++)
+            while (b != 2 * n - 1)
             {
+                //HLine(1, ' ');
                 HLine(a, ' ');
                 HLine(1, c);
-                HLine(b, ' ');
+                HLine(b - 2, ' ');
                 HLine(1, c);
                 Console.WriteLine();
                 b += 2;
