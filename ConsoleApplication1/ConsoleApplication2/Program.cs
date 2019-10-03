@@ -18,7 +18,7 @@ namespace ConsoleApplication2
             DrawV(4, 'V');
             RevTriangle(4, 'V');
             Triangle(4, 'A');
-            DrawW(10, 'W');
+            DrawW(4, 'W');
             DrawA(4, 'A');
             DrawX(4, 'X');
             DrawPlus(4, '+');
@@ -251,28 +251,30 @@ namespace ConsoleApplication2
         static void DrawW(int n, char c)
         {
             HLine(1, c);
-            HLine(n +1, ' ');
+            HLine(2 * n - 1, ' ');
             HLine(1, c);
-            HLine(n +1, ' ');
+            HLine(2 * n - 1, ' ');
             HLine(1, c);
             Console.WriteLine();
-            int b = n - 1;
-            for (int i = 1; i <= n; i++)
+            int b = 2 * n - 3;
+            int x = 1;
+            for (int i = 1; i < n; i++)
             {
                 HLine(i, ' ');
                 HLine(1, c);
                 HLine(b, ' ');
                 HLine(1, c);
-                HLine(i, ' ');
+                HLine(x, ' ');
                 HLine(1, c);
                 HLine(b, ' ');
                 HLine(1, c);
                 Console.WriteLine();
                 b -= 2;
+                x += 2;
             }
-            HLine(n - 1, ' ');
+            HLine(n, ' ');
             HLine(1, c);
-            HLine(n +1, ' ');
+            HLine(2 * n - 1, ' ');
             HLine(1, c);
             Console.WriteLine();
         }
